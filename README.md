@@ -1,0 +1,2 @@
+# AndroidBloatwareDisabler
+Android端末のプリインストールアプリ無効化を支援するWindowsアプリケーション。
