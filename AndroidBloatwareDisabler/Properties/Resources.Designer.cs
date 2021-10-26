@@ -70,6 +70,15 @@ namespace AndroidBloatwareDisabler.Properties {
         }
         
         /// <summary>
+        ///   Checked packages に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string CheckedPackages {
+            get {
+                return ResourceManager.GetString("CheckedPackages", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   {0} device(s) found. {1} に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string DevicesFound {
@@ -156,6 +165,15 @@ namespace AndroidBloatwareDisabler.Properties {
         internal static string ThirdpartyPackages {
             get {
                 return ResourceManager.GetString("ThirdpartyPackages", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Unchecked packages に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string UncheckedPackages {
+            get {
+                return ResourceManager.GetString("UncheckedPackages", resourceCulture);
             }
         }
     }

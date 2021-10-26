@@ -120,6 +120,9 @@
   <data name="AllPackages" xml:space="preserve">
     <value>All packages</value>
   </data>
+  <data name="CheckedPackages" xml:space="preserve">
+    <value>Checked packages</value>
+  </data>
   <data name="DevicesFound" xml:space="preserve">
     <value>{0} device(s) found. {1}</value>
   </data>
@@ -149,5 +152,8 @@
   </data>
   <data name="ThirdpartyPackages" xml:space="preserve">
     <value>Thirdparty packages</value>
+  </data>
+  <data name="UncheckedPackages" xml:space="preserve">
+    <value>Unchecked packages</value>
   </data>
 </root>

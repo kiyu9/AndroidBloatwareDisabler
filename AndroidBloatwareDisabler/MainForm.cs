@@ -17,9 +17,9 @@ namespace AndroidBloatwareDisabler
     {
         private const string PATH_DIR_ADB = @".\platform-tools";
 
-        private readonly object mLocker = new object();
+        private readonly object mLocker = new();
 
-        private readonly List<PackageInformation> mPackages = new List<PackageInformation>();
+        private readonly List<PackageInformation> mPackages = new();
 
         private enum FilterType
         {
@@ -27,7 +27,9 @@ namespace AndroidBloatwareDisabler
             SystemPackages,
             ThirdpartyPackages,
             EnabledPackages,
-            DisabledPackages
+            DisabledPackages,
+            CheckedPackages,
+            UncheckedPackages
         }
 
         public MainForm()
@@ -43,7 +45,9 @@ namespace AndroidBloatwareDisabler
                 new { Display = Properties.Resources.SystemPackages, Value = FilterType.SystemPackages },
                 new { Display = Properties.Resources.ThirdpartyPackages, Value = FilterType.ThirdpartyPackages },
                 new { Display = Properties.Resources.EnabledPackages, Value = FilterType.EnabledPackages },
-                new { Display = Properties.Resources.DisabledPackages, Value = FilterType.DisabledPackages }
+                new { Display = Properties.Resources.DisabledPackages, Value = FilterType.DisabledPackages },
+                new { Display = Properties.Resources.CheckedPackages, Value = FilterType.CheckedPackages },
+                new { Display = Properties.Resources.UncheckedPackages, Value = FilterType.UncheckedPackages }
             };
             cob_filter.DisplayMember = "Display";
             cob_filter.ValueMember = "Value";
@@ -102,6 +106,15 @@ namespace AndroidBloatwareDisabler
             var pkgInfo = e.Item.Tag as PackageInformation;
 
             pkgInfo.Checked = e.Item.Checked;
+
+            var selectedFilter = (FilterType)(int)cob_filter.SelectedValue;
+            
+            if (((selectedFilter == FilterType.CheckedPackages) && (!e.Item.Checked))
+                || ((selectedFilter == FilterType.UncheckedPackages) && e.Item.Checked)
+                )
+            {
+                lv_packages.Items.Remove(e.Item);
+            }
         }
 
         private void Tb_filter_Validated(object sender, EventArgs e)
@@ -111,7 +124,7 @@ namespace AndroidBloatwareDisabler
 
         private async Task UpdateDeviceList()
         {
-            List<DeviceInformation> devices = new List<DeviceInformation>();
+            List<DeviceInformation> devices = new();
 
             await Task.Run(() =>
             {
@@ -279,18 +292,22 @@ namespace AndroidBloatwareDisabler
 
         private void RefreshPackageList()
         {
-            lv_packages.Items.Clear();
+            lv_packages.ItemChecked -= Lv_packages_ItemChecked;
+            lv_packages.Items.Clear();            
 
             var selectedFilter = (FilterType)(int)cob_filter.SelectedValue;
             var filterText = tb_filter.Text;
             var enablePackageFiltering = !string.IsNullOrEmpty(filterText);
 
+            List<ListViewItem> newItems = null;
             foreach (var package in mPackages)
             {
                 if (((selectedFilter == FilterType.EnabledPackages) && (!package.Enabled))
                     || ((selectedFilter == FilterType.DisabledPackages) && package.Enabled)
                     || ((selectedFilter == FilterType.SystemPackages) && (!package.IsSystemPackage))
                     || ((selectedFilter == FilterType.ThirdpartyPackages) && package.IsSystemPackage)
+                    || ((selectedFilter == FilterType.CheckedPackages) && (!package.Checked))
+                    || ((selectedFilter == FilterType.UncheckedPackages) && package.Checked)
                     )
                 {
                     continue;
@@ -303,16 +320,25 @@ namespace AndroidBloatwareDisabler
                     continue;
                 }
 
-                var item = new ListViewItem(package.PackageName)
+                if (newItems == null)
+                {
+                    newItems = new();
+                }
+
+                newItems.Add(new ListViewItem(package.PackageName)
                 {
                     Tag = package,
                     Checked = package.Checked,
                     ForeColor = package.IsSystemPackage ? Color.Red : SystemColors.ControlText,
                     BackColor = package.Enabled ? SystemColors.ControlLightLight : SystemColors.ControlDark
-                };
-
-                lv_packages.Items.Add(item);
+                });
             }
+
+            if ((newItems?.Count ?? 0) > 0)
+            {
+                lv_packages.Items.AddRange(newItems.ToArray());
+            }
+            lv_packages.ItemChecked += Lv_packages_ItemChecked;
         }
 
         private static readonly StringBuilder sSb = new StringBuilder();

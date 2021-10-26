@@ -120,6 +120,9 @@
   <data name="AllPackages" xml:space="preserve">
     <value>すべてのパッケージ</value>
   </data>
+  <data name="CheckedPackages" xml:space="preserve">
+    <value>チェック付きパッケージ</value>
+  </data>
   <data name="DevicesFound" xml:space="preserve">
     <value>{0} 台のデバイスが見つかりました。 {1}</value>
   </data>
@@ -149,5 +152,8 @@
   </data>
   <data name="ThirdpartyPackages" xml:space="preserve">
     <value>サードパーティパッケージ</value>
+  </data>
+  <data name="UncheckedPackages" xml:space="preserve">
+    <value>チェックなしパッケージ</value>
   </data>
 </root>
