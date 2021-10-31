@@ -117,42 +117,105 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="lbl_filter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>193, 9</value>
-  </data>
-  <data name="lbl_filter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 12</value>
-  </data>
-  <data name="lbl_filter.Text" xml:space="preserve">
-    <value>フィルタ:</value>
-  </data>
   <data name="columnHeader1.Text" xml:space="preserve">
     <value>パラメータ</value>
   </data>
   <data name="columnHeader2.Text" xml:space="preserve">
     <value>値</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="lbl_filter.Location" type="System.Drawing.Point, System.Drawing">
+    <value>193, 9</value>
+  </data>
+  <data name="lbl_filter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>61, 18</value>
+  </data>
+  <data name="lbl_filter.Text" xml:space="preserve">
+    <value>フィルタ:</value>
+  </data>
   <data name="ch_packagename.Text" xml:space="preserve">
     <value>パッケージ名</value>
   </data>
-  <data name="tssl_file.Size" type="System.Drawing.Size, System.Drawing">
-    <value>67, 20</value>
+  <data name="tsmi_dumpAllPackages.Size" type="System.Drawing.Size, System.Drawing">
+    <value>340, 34</value>
   </data>
-  <data name="tssl_file.Text" xml:space="preserve">
-    <value>ファイル(&amp;F)</value>
+  <data name="tsmi_dumpAllPackages.Text" xml:space="preserve">
+    <value>すべてのパッケージ(&amp;A)</value>
   </data>
-  <data name="tssl_exit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>113, 22</value>
+  <data name="toolStripSeparator6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>337, 6</value>
+  </data>
+  <data name="tsmi_dumpSystemPackages.Size" type="System.Drawing.Size, System.Drawing">
+    <value>340, 34</value>
+  </data>
+  <data name="tsmi_dumpSystemPackages.Text" xml:space="preserve">
+    <value>システムパッケージ(&amp;S)</value>
+  </data>
+  <data name="tsmi_dumpThirdpartyPackages.Size" type="System.Drawing.Size, System.Drawing">
+    <value>340, 34</value>
+  </data>
+  <data name="tsmi_dumpThirdpartyPackages.Text" xml:space="preserve">
+    <value>サードパーティパッケージ(&amp;T)</value>
+  </data>
+  <data name="toolStripSeparator4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>337, 6</value>
+  </data>
+  <data name="tsmi_dumpEnabledPackages.Size" type="System.Drawing.Size, System.Drawing">
+    <value>340, 34</value>
+  </data>
+  <data name="tsmi_dumpEnabledPackages.Text" xml:space="preserve">
+    <value>有効パッケージ(&amp;E)</value>
+  </data>
+  <data name="tsmi_dumpDisabledPackages.Size" type="System.Drawing.Size, System.Drawing">
+    <value>340, 34</value>
+  </data>
+  <data name="tsmi_dumpDisabledPackages.Text" xml:space="preserve">
+    <value>無効パッケージ(&amp;D)</value>
+  </data>
+  <data name="toolStripSeparator5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>337, 6</value>
+  </data>
+  <data name="tsmi_dumpCheckedPackages.Size" type="System.Drawing.Size, System.Drawing">
+    <value>340, 34</value>
+  </data>
+  <data name="tsmi_dumpCheckedPackages.Text" xml:space="preserve">
+    <value>チェックされたパッケージ(&amp;C)</value>
+  </data>
+  <data name="tsmi_dumpUncheckedPackages.Size" type="System.Drawing.Size, System.Drawing">
+    <value>340, 34</value>
+  </data>
+  <data name="tsmi_dumpUncheckedPackages.Text" xml:space="preserve">
+    <value>チェックされていないパッケージ(&amp;U)</value>
+  </data>
+  <data name="tssl_dump.Text" xml:space="preserve">
+    <value>ファイル出力(&amp;D)</value>
   </data>
   <data name="tssl_exit.Text" xml:space="preserve">
     <value>終了(&amp;X)</value>
   </data>
+  <data name="tssl_file.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 29</value>
+  </data>
+  <data name="tssl_file.Text" xml:space="preserve">
+    <value>ファイル(&amp;F)</value>
+  </data>
+  <data name="tssl_scanDevices.Size" type="System.Drawing.Size, System.Drawing">
+    <value>263, 34</value>
+  </data>
   <data name="tssl_scanDevices.Text" xml:space="preserve">
     <value>端末をスキャン(&amp;S)</value>
   </data>
+  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>260, 6</value>
+  </data>
+  <data name="tssl_disableEnable.Size" type="System.Drawing.Size, System.Drawing">
+    <value>263, 34</value>
+  </data>
   <data name="tssl_disableEnable.Text" xml:space="preserve">
     <value>無効化／有効化(&amp;D)</value>
+  </data>
+  <data name="tssl_tools.Size" type="System.Drawing.Size, System.Drawing">
+    <value>87, 29</value>
   </data>
   <data name="tssl_tools.Text" xml:space="preserve">
     <value>ツール(&amp;T)</value>

@@ -46,6 +46,18 @@
             this.tspb_progress = new System.Windows.Forms.ToolStripProgressBar();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.tssl_file = new System.Windows.Forms.ToolStripMenuItem();
+            this.tssl_dump = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmi_dumpAllPackages = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsmi_dumpSystemPackages = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmi_dumpThirdpartyPackages = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsmi_dumpEnabledPackages = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmi_dumpDisabledPackages = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsmi_dumpCheckedPackages = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmi_dumpUncheckedPackages = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.tssl_exit = new System.Windows.Forms.ToolStripMenuItem();
             this.tssl_adb = new System.Windows.Forms.ToolStripMenuItem();
             this.tssl_scanDevices = new System.Windows.Forms.ToolStripMenuItem();
@@ -198,6 +210,7 @@
             // menuStrip1
             // 
             resources.ApplyResources(this.menuStrip1, "menuStrip1");
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tssl_file,
@@ -209,8 +222,81 @@
             // 
             resources.ApplyResources(this.tssl_file, "tssl_file");
             this.tssl_file.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tssl_dump,
+            this.toolStripSeparator3,
             this.tssl_exit});
             this.tssl_file.Name = "tssl_file";
+            // 
+            // tssl_dump
+            // 
+            resources.ApplyResources(this.tssl_dump, "tssl_dump");
+            this.tssl_dump.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmi_dumpAllPackages,
+            this.toolStripSeparator6,
+            this.tsmi_dumpSystemPackages,
+            this.tsmi_dumpThirdpartyPackages,
+            this.toolStripSeparator4,
+            this.tsmi_dumpEnabledPackages,
+            this.tsmi_dumpDisabledPackages,
+            this.toolStripSeparator5,
+            this.tsmi_dumpCheckedPackages,
+            this.tsmi_dumpUncheckedPackages});
+            this.tssl_dump.Name = "tssl_dump";
+            // 
+            // tsmi_dumpAllPackages
+            // 
+            resources.ApplyResources(this.tsmi_dumpAllPackages, "tsmi_dumpAllPackages");
+            this.tsmi_dumpAllPackages.Name = "tsmi_dumpAllPackages";
+            // 
+            // toolStripSeparator6
+            // 
+            resources.ApplyResources(this.toolStripSeparator6, "toolStripSeparator6");
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            // 
+            // tsmi_dumpSystemPackages
+            // 
+            resources.ApplyResources(this.tsmi_dumpSystemPackages, "tsmi_dumpSystemPackages");
+            this.tsmi_dumpSystemPackages.Name = "tsmi_dumpSystemPackages";
+            // 
+            // tsmi_dumpThirdpartyPackages
+            // 
+            resources.ApplyResources(this.tsmi_dumpThirdpartyPackages, "tsmi_dumpThirdpartyPackages");
+            this.tsmi_dumpThirdpartyPackages.Name = "tsmi_dumpThirdpartyPackages";
+            // 
+            // toolStripSeparator4
+            // 
+            resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            // 
+            // tsmi_dumpEnabledPackages
+            // 
+            resources.ApplyResources(this.tsmi_dumpEnabledPackages, "tsmi_dumpEnabledPackages");
+            this.tsmi_dumpEnabledPackages.Name = "tsmi_dumpEnabledPackages";
+            // 
+            // tsmi_dumpDisabledPackages
+            // 
+            resources.ApplyResources(this.tsmi_dumpDisabledPackages, "tsmi_dumpDisabledPackages");
+            this.tsmi_dumpDisabledPackages.Name = "tsmi_dumpDisabledPackages";
+            // 
+            // toolStripSeparator5
+            // 
+            resources.ApplyResources(this.toolStripSeparator5, "toolStripSeparator5");
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            // 
+            // tsmi_dumpCheckedPackages
+            // 
+            resources.ApplyResources(this.tsmi_dumpCheckedPackages, "tsmi_dumpCheckedPackages");
+            this.tsmi_dumpCheckedPackages.Name = "tsmi_dumpCheckedPackages";
+            // 
+            // tsmi_dumpUncheckedPackages
+            // 
+            resources.ApplyResources(this.tsmi_dumpUncheckedPackages, "tsmi_dumpUncheckedPackages");
+            this.tsmi_dumpUncheckedPackages.Name = "tsmi_dumpUncheckedPackages";
+            // 
+            // toolStripSeparator3
+            // 
+            resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
             // 
             // tssl_exit
             // 
@@ -322,6 +408,18 @@
         private System.Windows.Forms.ToolStripMenuItem tssl_scanDevices;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem tssl_disableEnable;
+        private System.Windows.Forms.ToolStripMenuItem tssl_dump;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripMenuItem tsmi_dumpSystemPackages;
+        private System.Windows.Forms.ToolStripMenuItem tsmi_dumpThirdpartyPackages;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripMenuItem tsmi_dumpEnabledPackages;
+        private System.Windows.Forms.ToolStripMenuItem tsmi_dumpDisabledPackages;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripMenuItem tsmi_dumpCheckedPackages;
+        private System.Windows.Forms.ToolStripMenuItem tsmi_dumpUncheckedPackages;
+        private System.Windows.Forms.ToolStripMenuItem tsmi_dumpAllPackages;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
     }
 }
 

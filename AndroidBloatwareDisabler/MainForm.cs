@@ -36,6 +36,23 @@ namespace AndroidBloatwareDisabler
         {
             InitializeComponent();
 
+            var tsmis = new[]
+            {
+                new { Tsmi = tsmi_dumpAllPackages, Filter = FilterType.AllPackages },
+                new { Tsmi = tsmi_dumpSystemPackages, Filter = FilterType.SystemPackages },
+                new { Tsmi = tsmi_dumpThirdpartyPackages, Filter = FilterType.ThirdpartyPackages },
+                new { Tsmi = tsmi_dumpEnabledPackages, Filter = FilterType.EnabledPackages },
+                new { Tsmi = tsmi_dumpDisabledPackages, Filter = FilterType.DisabledPackages },
+                new { Tsmi = tsmi_dumpCheckedPackages, Filter = FilterType.CheckedPackages },
+                new { Tsmi = tsmi_dumpUncheckedPackages, Filter = FilterType.UncheckedPackages }
+            };
+            foreach (var item in tsmis)
+            {
+                item.Tsmi.Tag = item.Filter;
+                item.Tsmi.Click += Tsmi_DumpClick;
+            }
+
+
             lv_devices.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
             lv_deviceInformations.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
             lv_packages.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
@@ -63,6 +80,106 @@ namespace AndroidBloatwareDisabler
             cob_filter.DropDownWidth = maxWidth + 10;
 
             splitContainer2.Panel2Collapsed = true;
+        }
+
+        private void Tsmi_DumpClick(object sender, EventArgs e)
+        {
+            if ((sender is not ToolStripMenuItem tsmi)
+                || (tsmi.Tag is not FilterType filterType)
+                || (mPackages.Count < 1)
+                )
+            {
+                return;
+            }
+
+            using var sfd = new SaveFileDialog
+            {
+                InitialDirectory = Application.StartupPath,
+                FileName = "",
+                Filter = $"{Properties.Resources.PackageNameOnly} (*.txt)|*.txt"
+            };
+            if (sfd.ShowDialog() != DialogResult.OK)
+            {
+                goto EXIT;
+            }
+
+            var isLocked = false;
+            try
+            {
+                Monitor.TryEnter(mLocker, ref isLocked);
+
+                if (isLocked)
+                {
+                    var targets = filterType switch
+                    {
+                        FilterType.SystemPackages => mPackages.Where(pi => pi.IsSystemPackage),
+                        FilterType.ThirdpartyPackages => mPackages.Where(pi => !pi.IsSystemPackage),
+                        FilterType.EnabledPackages => mPackages.Where(pi => pi.Enabled),
+                        FilterType.DisabledPackages => mPackages.Where(pi => !pi.Enabled),
+                        FilterType.CheckedPackages => mPackages.Where(pi => pi.Checked),
+                        FilterType.UncheckedPackages => mPackages.Where(pi => !pi.Checked),
+                        _ => mPackages
+                    };
+
+                    if (targets.Count() > 0)
+                    {
+                        var result = sfd.FilterIndex switch
+                        {
+                            1 => DumpPackageNames(targets, sfd.FileName),
+                            _ => -1
+                        };
+
+                        tssl_status.Text = (result >= 0) ? string.Format(Properties.Resources.PackagesDumped, result, DateTime.Now.ToString("HH:mm:ss.fff")) : string.Format(Properties.Resources.ThereIsNoPackageThatCanBeDump, DateTime.Now.ToString("HH:mm:ss.fff"));
+                    }
+                }
+            }
+            finally
+            {
+                if (isLocked)
+                {
+                    Monitor.Exit(mLocker);
+                }
+            }
+
+        EXIT:
+            sfd.Dispose();
+
+            int DumpPackageNames(IEnumerable<PackageInformation> packages, string filePath)
+            {
+                using var sw = new StreamWriter(filePath, false, Encoding.UTF8);
+                var written = 0;
+                var totalCount = (double)packages.Count();
+
+                tspb_progress.Value = 0;
+                try
+                {
+                    foreach (var pkg in packages)
+                    {
+                        sw.WriteLine(pkg.PackageName);
+                        written++;
+
+                        tspb_progress.Value = (int)(written / totalCount + 0.5d);
+                    }
+                }
+                catch
+                {
+                    if (written == 0)
+                    {
+                        written = -1;
+                    }
+                }
+                finally
+                {
+                    sw.Close();
+                }
+
+                if (written == totalCount)
+                {
+                    tspb_progress.Value = 100;
+                }
+
+                return written;
+            }
         }
 
         protected override void OnLoad(EventArgs e)

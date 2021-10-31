@@ -141,6 +141,12 @@
   <data name="ListItem_Name" xml:space="preserve">
     <value>Name</value>
   </data>
+  <data name="PackageNameOnly" xml:space="preserve">
+    <value>Package name only</value>
+  </data>
+  <data name="PackagesDumped" xml:space="preserve">
+    <value>{0} package(s) have been dumped. {1}</value>
+  </data>
   <data name="PackagesFound" xml:space="preserve">
     <value>{0} package(s) found. {1}</value>
   </data>
@@ -149,6 +155,9 @@
   </data>
   <data name="SystemPackages" xml:space="preserve">
     <value>System packages</value>
+  </data>
+  <data name="ThereIsNoPackageThatCanBeDump" xml:space="preserve">
+    <value>There is no package that can be dump. {0}</value>
   </data>
   <data name="ThirdpartyPackages" xml:space="preserve">
     <value>Thirdparty packages</value>

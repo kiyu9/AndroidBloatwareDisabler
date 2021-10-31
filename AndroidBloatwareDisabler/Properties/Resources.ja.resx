@@ -141,6 +141,12 @@
   <data name="ListItem_Name" xml:space="preserve">
     <value>名称</value>
   </data>
+  <data name="PackageNameOnly" xml:space="preserve">
+    <value>パッケージ名のみ</value>
+  </data>
+  <data name="PackagesDumped" xml:space="preserve">
+    <value>{0} 個のパッケージがファイル出力されました。 {1}</value>
+  </data>
   <data name="PackagesFound" xml:space="preserve">
     <value>{0} 個のパッケージが見つかりました。 {1}</value>
   </data>
@@ -149,6 +155,9 @@
   </data>
   <data name="SystemPackages" xml:space="preserve">
     <value>システムパッケージ</value>
+  </data>
+  <data name="ThereIsNoPackageThatCanBeDump" xml:space="preserve">
+    <value>ファイル出力できるパッケージはありませんでした。 {0}</value>
   </data>
   <data name="ThirdpartyPackages" xml:space="preserve">
     <value>サードパーティパッケージ</value>

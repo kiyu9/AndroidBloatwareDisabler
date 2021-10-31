@@ -117,15 +117,21 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="&gt;&gt;tsmi_dumpDisabledPackages.Name" xml:space="preserve">
+    <value>tsmi_dumpDisabledPackages</value>
+  </data>
   <data name="&gt;&gt;lbl_filter.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;splitContainer2.Panel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="toolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>267, 6</value>
+  </data>
+  <data name="&gt;&gt;ch_id.Name" xml:space="preserve">
+    <value>ch_id</value>
+  </data>
   <data name="lv_deviceInformations.Size" type="System.Drawing.Size, System.Drawing">
-    <value>151, 190</value>
+    <value>250, 283</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="splitContainer2.Orientation" type="System.Windows.Forms.Orientation, System.Windows.Forms">
@@ -138,11 +144,17 @@
   <data name="tb_filter.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
+  <data name="tsmi_dumpUncheckedPackages.Text" xml:space="preserve">
+    <value>Unchecked packages(&amp;U)</value>
+  </data>
+  <data name="lv_deviceInformations.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 4, 5, 4</value>
+  </data>
   <data name="lv_devices.Size" type="System.Drawing.Size, System.Drawing">
-    <value>151, 199</value>
+    <value>250, 307</value>
   </data>
   <data name="lv_packages.Size" type="System.Drawing.Size, System.Drawing">
-    <value>451, 168</value>
+    <value>751, 251</value>
   </data>
   <data name="&gt;&gt;tssl_options.Name" xml:space="preserve">
     <value>tssl_options</value>
@@ -153,26 +165,41 @@
   <data name="&gt;&gt;toolStripSeparator2.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tssl_downloadAdbPackage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;toolStripSeparator4.Name" xml:space="preserve">
+    <value>toolStripSeparator4</value>
   </data>
   <data name="&gt;&gt;tssl_status.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 4, 5, 4</value>
+  </data>
+  <data name="tsmi_dumpDisabledPackages.Size" type="System.Drawing.Size, System.Drawing">
+    <value>301, 34</value>
+  </data>
   <data name="&gt;&gt;lv_deviceInformations.Parent" xml:space="preserve">
     <value>splitContainer1.Panel1</value>
   </data>
-  <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="tsmi_dumpUncheckedPackages.Size" type="System.Drawing.Size, System.Drawing">
+    <value>301, 34</value>
   </data>
-  <data name="splitContainer1.Panel1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
+  <data name="splitContainer1.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="tsmi_dumpDisabledPackages.Text" xml:space="preserve">
+    <value>Disabled packages(&amp;D)</value>
   </data>
   <data name="tssl_file.Size" type="System.Drawing.Size, System.Drawing">
-    <value>51, 20</value>
+    <value>73, 29</value>
   </data>
   <data name="&gt;&gt;columnHeader1.Name" xml:space="preserve">
     <value>columnHeader1</value>
+  </data>
+  <data name="&gt;&gt;tssl_downloadAdbPackage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl_filter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;splitContainer2.Type" xml:space="preserve">
     <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -181,28 +208,31 @@
     <value>1</value>
   </data>
   <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>624, 24</value>
+    <value>1040, 35</value>
   </data>
   <data name="lv_devices.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
+    <value>5, 4</value>
   </data>
-  <data name="&gt;&gt;tssl_file.Name" xml:space="preserve">
-    <value>tssl_file</value>
+  <data name="toolStripSeparator6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>298, 6</value>
+  </data>
+  <data name="tsmi_dumpSystemPackages.Text" xml:space="preserve">
+    <value>System packages(&amp;S)</value>
   </data>
   <data name="tssl_downloadAdbPackage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>201, 22</value>
+    <value>307, 34</value>
   </data>
-  <data name="lv_deviceInformations.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;splitContainer2.Panel1.Parent" xml:space="preserve">
-    <value>splitContainer2</value>
+  <data name="splitContainer2.SplitterWidth" type="System.Int32, mscorlib">
+    <value>6</value>
   </data>
   <data name="&gt;&gt;tssl_file.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="statusStrip1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 23, 0</value>
+  </data>
   <data name="tssl_status.Size" type="System.Drawing.Size, System.Drawing">
-    <value>507, 17</value>
+    <value>844, 22</value>
   </data>
   <data name="&gt;&gt;menuStrip1.Type" xml:space="preserve">
     <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -216,26 +246,38 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Android Bloatware Disabler</value>
   </data>
+  <data name="&gt;&gt;tsmi_dumpCheckedPackages.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="lv_packages.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="&gt;&gt;tsmi_dumpEnabledPackages.Name" xml:space="preserve">
+    <value>tsmi_dumpEnabledPackages</value>
+  </data>
+  <data name="statusStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1040, 29</value>
   </data>
   <data name="&gt;&gt;menuStrip1.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>171, 6</value>
+    <value>261, 6</value>
   </data>
   <data name="lbl_filter.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 12</value>
+    <value>10, 18</value>
   </data>
   <data name="cob_filter.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
   <data name="&gt;&gt;tssl_disableEnable.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tssl_dump.Name" xml:space="preserve">
+    <value>tssl_dump</value>
   </data>
   <data name="&gt;&gt;tb_filter.Name" xml:space="preserve">
     <value>tb_filter</value>
@@ -250,10 +292,16 @@
     <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="splitContainer1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>624, 395</value>
+    <value>1040, 598</value>
+  </data>
+  <data name="&gt;&gt;tsmi_dumpThirdpartyPackages.Name" xml:space="preserve">
+    <value>tsmi_dumpThirdpartyPackages</value>
   </data>
   <data name="&gt;&gt;cob_filter.Parent" xml:space="preserve">
     <value>splitContainer2.Panel1</value>
+  </data>
+  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>304, 6</value>
   </data>
   <data name="&gt;&gt;splitContainer1.Name" xml:space="preserve">
     <value>splitContainer1</value>
@@ -261,11 +309,20 @@
   <data name="&gt;&gt;lv_deviceInformations.Name" xml:space="preserve">
     <value>lv_deviceInformations</value>
   </data>
-  <data name="&gt;&gt;splitContainer1.Panel1.Name" xml:space="preserve">
-    <value>splitContainer1.Panel1</value>
+  <data name="toolStripSeparator4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>298, 6</value>
+  </data>
+  <data name="&gt;&gt;tsmi_dumpAllPackages.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="splitContainer1.SplitterDistance" type="System.Int32, mscorlib">
-    <value>157</value>
+    <value>260</value>
   </data>
   <data name="&gt;&gt;tb_filter.Parent" xml:space="preserve">
     <value>splitContainer2.Panel1</value>
@@ -273,35 +330,44 @@
   <data name="lv_devices.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
+  <data name="&gt;&gt;tssl_dump.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="lbl_filter.Text" xml:space="preserve">
     <value>Filter:</value>
   </data>
   <data name="&gt;&gt;columnHeader2.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="columnHeader2.Text" xml:space="preserve">
-    <value>Value</value>
+  <data name="tsmi_dumpEnabledPackages.Size" type="System.Drawing.Size, System.Drawing">
+    <value>301, 34</value>
   </data>
   <data name="statusStrip1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
+  <data name="&gt;&gt;tssl_downloadAdbPackage.Name" xml:space="preserve">
+    <value>tssl_downloadAdbPackage</value>
+  </data>
   <data name="lv_packages.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 30</value>
+    <value>10, 45</value>
   </data>
   <data name="&gt;&gt;statusStrip1.Type" xml:space="preserve">
     <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;menuStrip1.Name" xml:space="preserve">
+    <value>menuStrip1</value>
+  </data>
+  <data name="tsmi_dumpThirdpartyPackages.Size" type="System.Drawing.Size, System.Drawing">
+    <value>301, 34</value>
+  </data>
   <data name="&gt;&gt;tssl_options.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tssl_adb.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;tsmi_dumpUncheckedPackages.Name" xml:space="preserve">
+    <value>tsmi_dumpUncheckedPackages</value>
   </data>
   <data name="statusStrip1.Text" xml:space="preserve">
     <value>statusStrip1</value>
-  </data>
-  <data name="&gt;&gt;statusStrip1.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="tssl_options.Text" xml:space="preserve">
     <value>Options(&amp;O)</value>
@@ -313,13 +379,16 @@
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="splitContainer2.Panel2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
+    <value>5, 4, 5, 4</value>
+  </data>
+  <data name="splitContainer1.Panel1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 4, 5, 4</value>
   </data>
   <data name="lbl_filter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>199, 9</value>
+    <value>332, 14</value>
   </data>
-  <data name="&gt;&gt;ch_id.Name" xml:space="preserve">
-    <value>ch_id</value>
+  <data name="tssl_disableEnable.Size" type="System.Drawing.Size, System.Drawing">
+    <value>264, 34</value>
   </data>
   <data name="&gt;&gt;lv_packages.ZOrder" xml:space="preserve">
     <value>2</value>
@@ -330,20 +399,32 @@
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>
   </data>
+  <data name="lv_devices.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 4, 5, 4</value>
+  </data>
   <data name="&gt;&gt;toolStripSeparator2.Name" xml:space="preserve">
     <value>toolStripSeparator2</value>
   </data>
   <data name="splitContainer2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>463, 395</value>
+    <value>773, 598</value>
   </data>
   <data name="&gt;&gt;splitContainer1.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
+  <data name="tsmi_dumpAllPackages.Text" xml:space="preserve">
+    <value>All packages(&amp;A)</value>
+  </data>
   <data name="lv_deviceInformations.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
   </data>
-  <data name="&gt;&gt;tssl_tools.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="tsmi_dumpCheckedPackages.Text" xml:space="preserve">
+    <value>Checked packages(&amp;C)</value>
+  </data>
+  <data name="tsmi_dumpAllPackages.Size" type="System.Drawing.Size, System.Drawing">
+    <value>301, 34</value>
+  </data>
+  <data name="tssl_exit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>270, 34</value>
   </data>
   <data name="&gt;&gt;splitContainer1.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -351,14 +432,17 @@
   <data name="&gt;&gt;statusStrip1.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
+  <data name="columnHeader2.Text" xml:space="preserve">
+    <value>Value</value>
+  </data>
   <data name="&gt;&gt;lbl_filter.Parent" xml:space="preserve">
     <value>splitContainer2.Panel1</value>
   </data>
-  <data name="&gt;&gt;splitContainer2.Panel1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="statusStrip1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 419</value>
+    <value>0, 633</value>
+  </data>
+  <data name="&gt;&gt;splitContainer2.Panel1.Parent" xml:space="preserve">
+    <value>splitContainer2</value>
   </data>
   <data name="&gt;&gt;columnHeader1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -366,26 +450,50 @@
   <data name="tssl_downloadAdbPackage.Text" xml:space="preserve">
     <value>Download ADB package</value>
   </data>
-  <data name="&gt;&gt;ch_id.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="menuStrip1.Text" xml:space="preserve">
+    <value>menuStrip1</value>
   </data>
-  <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;toolStripSeparator3.Name" xml:space="preserve">
+    <value>toolStripSeparator3</value>
+  </data>
+  <data name="&gt;&gt;tsmi_dumpSystemPackages.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tspb_progress.Size" type="System.Drawing.Size, System.Drawing">
+    <value>167, 21</value>
+  </data>
+  <data name="&gt;&gt;tsmi_dumpEnabledPackages.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="menuStrip1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="splitContainer1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 24</value>
+    <value>0, 35</value>
   </data>
   <data name="&gt;&gt;splitContainer1.Panel2.Parent" xml:space="preserve">
     <value>splitContainer1</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="tssl_exit.Text" xml:space="preserve">
     <value>Exit(&amp;X)</value>
   </data>
   <data name="&gt;&gt;columnHeader2.Name" xml:space="preserve">
     <value>columnHeader2</value>
+  </data>
+  <data name="&gt;&gt;tssl_adb.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tssl_dump.Size" type="System.Drawing.Size, System.Drawing">
+    <value>270, 34</value>
+  </data>
+  <data name="tssl_dump.Text" xml:space="preserve">
+    <value>Dump(&amp;D)</value>
+  </data>
+  <data name="&gt;&gt;tssl_scanDevices.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="tssl_disableEnable.Text" xml:space="preserve">
     <value>Disable / Enable(&amp;D)</value>
@@ -396,38 +504,50 @@
   <data name="&gt;&gt;lv_devices.Parent" xml:space="preserve">
     <value>splitContainer1.Panel1</value>
   </data>
-  <data name="&gt;&gt;tb_filter.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="&gt;&gt;splitContainer2.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel2</value>
+  </data>
+  <data name="&gt;&gt;tsmi_dumpDisabledPackages.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="ch_id.Text" xml:space="preserve">
     <value>ID</value>
   </data>
   <data name="tb_filter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>222, 19</value>
+    <value>369, 25</value>
   </data>
   <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="&gt;&gt;splitContainer2.Panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;tsmi_dumpSystemPackages.Name" xml:space="preserve">
+    <value>tsmi_dumpSystemPackages</value>
   </data>
   <data name="tssl_adb.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 20</value>
+    <value>85, 29</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lv_packages.Parent" xml:space="preserve">
     <value>splitContainer2.Panel1</value>
   </data>
+  <data name="&gt;&gt;tsmi_dumpCheckedPackages.Name" xml:space="preserve">
+    <value>tsmi_dumpCheckedPackages</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator6.Name" xml:space="preserve">
+    <value>toolStripSeparator6</value>
+  </data>
   <data name="&gt;&gt;lv_devices.Name" xml:space="preserve">
     <value>lv_devices</value>
   </data>
-  <data name="tssl_exit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 22</value>
+  <data name="menuStrip1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 3, 0, 3</value>
   </data>
   <data name="tssl_scanDevices.Text" xml:space="preserve">
     <value>Scan Devices(&amp;S)</value>
   </data>
-  <data name="&gt;&gt;splitContainer2.Parent" xml:space="preserve">
-    <value>splitContainer1.Panel2</value>
+  <data name="&gt;&gt;statusStrip1.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="lbl_filter.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -435,23 +555,29 @@
   <data name="&gt;&gt;splitContainer2.Panel2.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="&gt;&gt;toolStripSeparator5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="tssl_file.Text" xml:space="preserve">
     <value>File(&amp;F)</value>
   </data>
   <data name="columnHeader1.Text" xml:space="preserve">
     <value>Item name</value>
   </data>
+  <data name="splitContainer1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 4, 5, 4</value>
+  </data>
   <data name="&gt;&gt;splitContainer2.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="tb_filter.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>1, 2, 1, 2</value>
-  </data>
-  <data name="&gt;&gt;lv_packages.Name" xml:space="preserve">
-    <value>lv_packages</value>
+    <value>2, 3, 2, 3</value>
   </data>
   <data name="splitContainer2.Panel1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
+    <value>5, 4, 5, 4</value>
+  </data>
+  <data name="&gt;&gt;tssl_file.Name" xml:space="preserve">
+    <value>tssl_file</value>
   </data>
   <data name="&gt;&gt;splitContainer1.Panel2.Name" xml:space="preserve">
     <value>splitContainer1.Panel2</value>
@@ -459,41 +585,62 @@
   <data name="&gt;&gt;tspb_progress.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripProgressBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;splitContainer1.Panel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;tssl_disableEnable.Name" xml:space="preserve">
+    <value>tssl_disableEnable</value>
   </data>
-  <data name="&gt;&gt;lbl_filter.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="tb_filter.Location" type="System.Drawing.Point, System.Drawing">
+    <value>392, 9</value>
   </data>
-  <data name="&gt;&gt;tssl_scanDevices.Type" xml:space="preserve">
+  <data name="&gt;&gt;splitContainer1.Panel1.Name" xml:space="preserve">
+    <value>splitContainer1.Panel1</value>
+  </data>
+  <data name="&gt;&gt;tssl_tools.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="lv_packages.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 4, 5, 4</value>
+  </data>
   <data name="tssl_options.Size" type="System.Drawing.Size, System.Drawing">
-    <value>201, 22</value>
+    <value>307, 34</value>
   </data>
   <data name="cob_filter.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>1, 2, 1, 2</value>
+    <value>2, 3, 2, 3</value>
   </data>
-  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>198, 6</value>
+  <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmi_dumpUncheckedPackages.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;splitContainer2.Panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ch_id.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tssl_scanDevices.Name" xml:space="preserve">
     <value>tssl_scanDevices</value>
   </data>
   <data name="cob_filter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>172, 20</value>
+    <value>284, 26</value>
   </data>
   <data name="splitContainer2.SplitterDistance" type="System.Int32, mscorlib">
-    <value>204</value>
+    <value>307</value>
+  </data>
+  <data name="tsmi_dumpCheckedPackages.Size" type="System.Drawing.Size, System.Drawing">
+    <value>301, 34</value>
   </data>
   <data name="lv_devices.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
   <data name="lbl_filter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>34, 12</value>
+    <value>51, 18</value>
+  </data>
+  <data name="tb_filter.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
   </data>
   <data name="tssl_status.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -502,7 +649,7 @@
     <value>ADB(&amp;A)</value>
   </data>
   <data name="tssl_tools.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 20</value>
+    <value>88, 29</value>
   </data>
   <data name="&gt;&gt;splitContainer2.Panel2.Name" xml:space="preserve">
     <value>splitContainer2.Panel2</value>
@@ -513,11 +660,17 @@
   <data name="&gt;&gt;tssl_exit.Name" xml:space="preserve">
     <value>tssl_exit</value>
   </data>
-  <data name="statusStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>624, 22</value>
+  <data name="tsmi_dumpThirdpartyPackages.Text" xml:space="preserve">
+    <value>Thirdparty packages(&amp;T)</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="lv_packages.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="toolStripSeparator5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>298, 6</value>
   </data>
   <data name="&gt;&gt;lv_devices.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -529,16 +682,25 @@
     <value>PackageName</value>
   </data>
   <data name="tssl_scanDevices.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 22</value>
+    <value>264, 34</value>
   </data>
-  <data name="menuStrip1.Text" xml:space="preserve">
-    <value>menuStrip1</value>
+  <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
-  <data name="tb_filter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>235, 6</value>
+  <data name="splitContainer1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="&gt;&gt;tsmi_dumpThirdpartyPackages.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="splitContainer1.SplitterWidth" type="System.Int32, mscorlib">
+    <value>7</value>
   </data>
   <data name="&gt;&gt;lv_devices.Type" xml:space="preserve">
     <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmi_dumpAllPackages.Name" xml:space="preserve">
+    <value>tsmi_dumpAllPackages</value>
   </data>
   <data name="splitContainer2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -547,31 +709,28 @@
     <value>0</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>624, 441</value>
+    <value>1040, 662</value>
   </data>
   <data name="&gt;&gt;tssl_tools.Name" xml:space="preserve">
     <value>tssl_tools</value>
   </data>
   <data name="cob_filter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 5</value>
+    <value>10, 8</value>
   </data>
   <data name="&gt;&gt;tssl_adb.Name" xml:space="preserve">
     <value>tssl_adb</value>
   </data>
-  <data name="&gt;&gt;splitContainer1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="tsmi_dumpEnabledPackages.Text" xml:space="preserve">
+    <value>Enabled packages(&amp;E)</value>
   </data>
   <data name="lbl_filter.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>1, 0, 1, 0</value>
+    <value>2, 0, 2, 0</value>
   </data>
-  <data name="splitContainer1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+  <data name="lv_deviceInformations.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
-  <data name="tb_filter.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="splitContainer1.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+  <data name="&gt;&gt;lv_packages.Name" xml:space="preserve">
+    <value>lv_packages</value>
   </data>
   <data name="&gt;&gt;cob_filter.Name" xml:space="preserve">
     <value>cob_filter</value>
@@ -582,29 +741,32 @@
   <data name="tssl_tools.Text" xml:space="preserve">
     <value>Tools(&amp;T)</value>
   </data>
-  <data name="&gt;&gt;tssl_disableEnable.Name" xml:space="preserve">
-    <value>tssl_disableEnable</value>
+  <data name="&gt;&gt;splitContainer2.Panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tssl_downloadAdbPackage.Name" xml:space="preserve">
-    <value>tssl_downloadAdbPackage</value>
+  <data name="splitContainer2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 4, 5, 4</value>
   </data>
-  <data name="tspb_progress.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 16</value>
+  <data name="tsmi_dumpSystemPackages.Size" type="System.Drawing.Size, System.Drawing">
+    <value>301, 34</value>
+  </data>
+  <data name="&gt;&gt;tb_filter.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="&gt;&gt;tssl_status.Name" xml:space="preserve">
     <value>tssl_status</value>
   </data>
-  <data name="tssl_disableEnable.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 22</value>
+  <data name="&gt;&gt;toolStripSeparator5.Name" xml:space="preserve">
+    <value>toolStripSeparator5</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">
     <value>toolStripSeparator1</value>
   </data>
-  <data name="&gt;&gt;menuStrip1.Name" xml:space="preserve">
-    <value>menuStrip1</value>
+  <data name="&gt;&gt;splitContainer2.Panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="lv_deviceInformations.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 202</value>
+    <value>5, 311</value>
   </data>
   <data name="&gt;&gt;splitContainer2.Panel1.Name" xml:space="preserve">
     <value>splitContainer2.Panel1</value>
@@ -622,7 +784,7 @@
     <value>5</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>640, 480</value>
+    <value>912, 648</value>
   </data>
   <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>133, 17</value>

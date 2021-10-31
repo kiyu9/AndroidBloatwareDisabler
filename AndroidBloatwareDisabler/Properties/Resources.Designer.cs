@@ -133,6 +133,24 @@ namespace AndroidBloatwareDisabler.Properties {
         }
         
         /// <summary>
+        ///   Package name only に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string PackageNameOnly {
+            get {
+                return ResourceManager.GetString("PackageNameOnly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   {0} package(s) have been dumped. {1} に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string PackagesDumped {
+            get {
+                return ResourceManager.GetString("PackagesDumped", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   {0} package(s) found. {1} に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string PackagesFound {
@@ -156,6 +174,15 @@ namespace AndroidBloatwareDisabler.Properties {
         internal static string SystemPackages {
             get {
                 return ResourceManager.GetString("SystemPackages", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   There is no package that can be dump. {0} に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string ThereIsNoPackageThatCanBeDump {
+            get {
+                return ResourceManager.GetString("ThereIsNoPackageThatCanBeDump", resourceCulture);
             }
         }
         
