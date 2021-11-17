@@ -117,13 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="splitContainer1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 33</value>
+  </data>
+  <data name="lv_devices.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 309</value>
+  </data>
   <data name="columnHeader1.Text" xml:space="preserve">
     <value>パラメータ</value>
   </data>
   <data name="columnHeader2.Text" xml:space="preserve">
     <value>値</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="lv_deviceInformations.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 313</value>
+  </data>
   <data name="lbl_filter.Location" type="System.Drawing.Point, System.Drawing">
     <value>193, 9</value>
   </data>
@@ -135,6 +144,28 @@
   </data>
   <data name="ch_packagename.Text" xml:space="preserve">
     <value>パッケージ名</value>
+  </data>
+  <data name="lv_packages.Size" type="System.Drawing.Size, System.Drawing">
+    <value>676, 250</value>
+  </data>
+  <data name="splitContainer2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>696, 600</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="splitContainer2.SplitterDistance" type="System.Int32, mscorlib">
+    <value>306</value>
+  </data>
+  <data name="splitContainer1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>936, 600</value>
+  </data>
+  <data name="tsmi_applyPackageList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>279, 34</value>
+  </data>
+  <data name="tsmi_applyPackageList.Text" xml:space="preserve">
+    <value>パッケージリスト適用(&amp;A)</value>
+  </data>
+  <data name="toolStripSeparator7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>276, 6</value>
   </data>
   <data name="tsmi_dumpAllPackages.Size" type="System.Drawing.Size, System.Drawing">
     <value>340, 34</value>
@@ -187,8 +218,17 @@
   <data name="tsmi_dumpUncheckedPackages.Text" xml:space="preserve">
     <value>チェックされていないパッケージ(&amp;U)</value>
   </data>
+  <data name="tssl_dump.Size" type="System.Drawing.Size, System.Drawing">
+    <value>279, 34</value>
+  </data>
   <data name="tssl_dump.Text" xml:space="preserve">
     <value>ファイル出力(&amp;D)</value>
+  </data>
+  <data name="toolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>276, 6</value>
+  </data>
+  <data name="tssl_exit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>279, 34</value>
   </data>
   <data name="tssl_exit.Text" xml:space="preserve">
     <value>終了(&amp;X)</value>
@@ -220,9 +260,11 @@
   <data name="tssl_tools.Text" xml:space="preserve">
     <value>ツール(&amp;T)</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="tssl_tools.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
+  </data>
+  <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>936, 33</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Androidプリインストールアプリ無効化ツール</value>

@@ -46,6 +46,8 @@
             this.tspb_progress = new System.Windows.Forms.ToolStripProgressBar();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.tssl_file = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmi_applyPackageList = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.tssl_dump = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_dumpAllPackages = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
@@ -222,10 +224,23 @@
             // 
             resources.ApplyResources(this.tssl_file, "tssl_file");
             this.tssl_file.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmi_applyPackageList,
+            this.toolStripSeparator7,
             this.tssl_dump,
             this.toolStripSeparator3,
             this.tssl_exit});
             this.tssl_file.Name = "tssl_file";
+            // 
+            // tsmi_applyPackageList
+            // 
+            resources.ApplyResources(this.tsmi_applyPackageList, "tsmi_applyPackageList");
+            this.tsmi_applyPackageList.Name = "tsmi_applyPackageList";
+            this.tsmi_applyPackageList.Click += new System.EventHandler(this.Tsmi_applyPackageList_Click);
+            // 
+            // toolStripSeparator7
+            // 
+            resources.ApplyResources(this.toolStripSeparator7, "toolStripSeparator7");
+            this.toolStripSeparator7.Name = "toolStripSeparator7";
             // 
             // tssl_dump
             // 
@@ -357,12 +372,15 @@
             // MainForm
             // 
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AllowDrop = true;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
+            this.DragDrop += new System.Windows.Forms.DragEventHandler(this.MainForm_DragDrop);
+            this.DragEnter += new System.Windows.Forms.DragEventHandler(this.MainForm_DragEnter);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
@@ -420,6 +438,8 @@
         private System.Windows.Forms.ToolStripMenuItem tsmi_dumpUncheckedPackages;
         private System.Windows.Forms.ToolStripMenuItem tsmi_dumpAllPackages;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
+        private System.Windows.Forms.ToolStripMenuItem tsmi_applyPackageList;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
     }
 }
 

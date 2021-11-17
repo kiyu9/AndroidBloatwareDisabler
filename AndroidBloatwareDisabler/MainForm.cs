@@ -7,6 +7,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,6 +16,13 @@ namespace AndroidBloatwareDisabler
 {
     public partial class MainForm : Form
     {
+        private const string HEADER_COMMAND = "@";
+        private const string HEADER_COMMENT = "#";
+        private const string MODE_ENABLED = "enabled";
+        private const string MODE_DISABLED = "disabled";
+        private const string MODE_CHECKED = "checked";
+        private const string MODE_UNCHECKED = "unchecked";
+
         private const string PATH_DIR_ADB = @".\platform-tools";
 
         private readonly object mLocker = new();
@@ -31,6 +39,24 @@ namespace AndroidBloatwareDisabler
             CheckedPackages,
             UncheckedPackages
         }
+
+        private enum ListReadingMode
+        {
+            None,
+            DisabledPackages,
+            EnabledPackages,
+        }
+
+        private enum DumpMode
+        {
+            TxtPackageNameOnly = 1,
+            TxtPackageNameAndState
+        }
+        private readonly string[] DumpModeFilters = new []
+        {
+            $"{Properties.Resources.PackageNameOnly} (*.txt)|*.txt",
+            $"{Properties.Resources.PackageNameAndState} (*.txt)|*.txt"
+        };
 
         public MainForm()
         {
@@ -82,6 +108,30 @@ namespace AndroidBloatwareDisabler
             splitContainer2.Panel2Collapsed = true;
         }
 
+        private void Tsmi_applyPackageList_Click(object sender, EventArgs e)
+        {
+            var initialDirectory = Path.GetDirectoryName(LastAppliedListPath);
+            var fileName = Path.GetFileName(LastAppliedListPath) ?? "";
+
+            if (!Directory.Exists(initialDirectory))
+            {
+                initialDirectory = Application.StartupPath;
+            }
+
+            using var ofd = new OpenFileDialog
+            {
+                FileName = fileName,
+                Multiselect = true,
+                InitialDirectory = initialDirectory,
+                Filter = string.Join("|", DumpModeFilters)
+            };
+            if (ofd.ShowDialog() != DialogResult.OK)
+            {
+                return;
+            }
+
+            ApplyPackageList(ofd.FileNames, (DumpMode)ofd.FilterIndex);            
+        }
         private void Tsmi_DumpClick(object sender, EventArgs e)
         {
             if ((sender is not ToolStripMenuItem tsmi)
@@ -92,11 +142,19 @@ namespace AndroidBloatwareDisabler
                 return;
             }
 
+            var initialDirectory = Path.GetDirectoryName(LastDumpedListPath);
+            var fileName = Path.GetFileName(LastDumpedListPath) ?? "";
+
+            if (!Directory.Exists(initialDirectory))
+            {
+                initialDirectory = Application.StartupPath;
+            }
+
             using var sfd = new SaveFileDialog
             {
-                InitialDirectory = Application.StartupPath,
-                FileName = "",
-                Filter = $"{Properties.Resources.PackageNameOnly} (*.txt)|*.txt"
+                InitialDirectory = initialDirectory,
+                FileName = fileName,
+                Filter = string.Join("|", DumpModeFilters)
             };
             if (sfd.ShowDialog() != DialogResult.OK)
             {
@@ -108,29 +166,38 @@ namespace AndroidBloatwareDisabler
             {
                 Monitor.TryEnter(mLocker, ref isLocked);
 
-                if (isLocked)
+                if (!isLocked)
                 {
-                    var targets = filterType switch
-                    {
-                        FilterType.SystemPackages => mPackages.Where(pi => pi.IsSystemPackage),
-                        FilterType.ThirdpartyPackages => mPackages.Where(pi => !pi.IsSystemPackage),
-                        FilterType.EnabledPackages => mPackages.Where(pi => pi.Enabled),
-                        FilterType.DisabledPackages => mPackages.Where(pi => !pi.Enabled),
-                        FilterType.CheckedPackages => mPackages.Where(pi => pi.Checked),
-                        FilterType.UncheckedPackages => mPackages.Where(pi => !pi.Checked),
-                        _ => mPackages
-                    };
+                    goto EXIT;
+                }
 
-                    if (targets.Count() > 0)
-                    {
-                        var result = sfd.FilterIndex switch
-                        {
-                            1 => DumpPackageNames(targets, sfd.FileName),
-                            _ => -1
-                        };
+                var targets = filterType switch
+                {
+                    FilterType.SystemPackages => mPackages.Where(pi => pi.IsSystemPackage),
+                    FilterType.ThirdpartyPackages => mPackages.Where(pi => !pi.IsSystemPackage),
+                    FilterType.EnabledPackages => mPackages.Where(pi => pi.Enabled),
+                    FilterType.DisabledPackages => mPackages.Where(pi => !pi.Enabled),
+                    FilterType.CheckedPackages => mPackages.Where(pi => pi.Checked),
+                    FilterType.UncheckedPackages => mPackages.Where(pi => !pi.Checked),
+                    _ => mPackages.Select(pkg => new { Order = pkg.Enabled switch {
+                                                                    false => 0,
+                                                                    _ => pkg.Checked switch {
+                                                                        false => 1,
+                                                                        _ => 2
+                                                                    }
+                                                        },
+                                                        Package = pkg
+                        })
+                        .OrderByDescending(item => item.Order)
+                        .Select(item => item.Package)
+                                  
+                };
 
-                        tssl_status.Text = (result >= 0) ? string.Format(Properties.Resources.PackagesDumped, result, DateTime.Now.ToString("HH:mm:ss.fff")) : string.Format(Properties.Resources.ThereIsNoPackageThatCanBeDump, DateTime.Now.ToString("HH:mm:ss.fff"));
-                    }
+                if (targets.Count() > 0)
+                {
+                    var result = DumpPackageNames(targets, sfd.FileName, (DumpMode)sfd.FilterIndex);
+
+                    tssl_status.Text = (result >= 0) ? string.Format(Properties.Resources.PackagesDumped, result, DateTime.Now.ToString("HH:mm:ss.fff")) : string.Format(Properties.Resources.ThereIsNoPackageThatCanBeDumped, DateTime.Now.ToString("HH:mm:ss.fff"));
                 }
             }
             finally
@@ -142,43 +209,97 @@ namespace AndroidBloatwareDisabler
             }
 
         EXIT:
-            sfd.Dispose();
-
-            int DumpPackageNames(IEnumerable<PackageInformation> packages, string filePath)
+            int DumpPackageNames(IEnumerable<PackageInformation> packages, string filePath, DumpMode dumpMode = DumpMode.TxtPackageNameOnly)
             {
-                using var sw = new StreamWriter(filePath, false, Encoding.UTF8);
-                var written = 0;
-                var totalCount = (double)packages.Count();
-
-                tspb_progress.Value = 0;
-                try
+                return dumpMode switch
                 {
-                    foreach (var pkg in packages)
-                    {
-                        sw.WriteLine(pkg.PackageName);
-                        written++;
+                    DumpMode.TxtPackageNameOnly => DumpPackageNamesAsTxt(packages, filePath, dumpMode),
+                    DumpMode.TxtPackageNameAndState => DumpPackageNamesAsTxt(packages, filePath, dumpMode),
+                    _ => 0
+                };
 
-                        tspb_progress.Value = (int)(written / totalCount + 0.5d);
+                int DumpPackageNamesAsTxt(IEnumerable<PackageInformation> packages, string filePath, DumpMode dumpMode = DumpMode.TxtPackageNameOnly)
+                {
+                    tspb_progress.Value = 0;
+                    var written = 0;
+                    var totalCount = (double)packages.Count();
+                    if (totalCount < 1)
+                    {
+                        goto _EXIT;
+                    }
+
+                    var state = getStateText(packages.FirstOrDefault());
+                    var lastState = state;
+
+
+                    using (var sw = new StreamWriter(filePath, false, Encoding.UTF8))
+                    {
+                        try
+                        {
+                            foreach (var pkg in packages)
+                            {
+                                if (dumpMode == DumpMode.TxtPackageNameAndState)
+                                {
+                                    state = getStateText(pkg);
+
+                                    if ((written < 1)
+                                        || (state != lastState)
+                                        )
+                                    {
+                                        sw.WriteLine($"{HEADER_COMMAND}{state}");
+                                    }
+
+                                    lastState = state;
+                                }
+
+                                sw.WriteLine(pkg.PackageName);
+                                written++;
+
+                                tspb_progress.Value = (int)(written / totalCount + 0.5d);
+                            }
+                        }
+                        catch
+                        {
+                            if (written == 0)
+                            {
+                                written = -1;
+                            }
+                        }
+                        finally
+                        {
+                            sw.Close();
+                        }
+                    }
+
+                    if (written == totalCount)
+                    {
+                        tspb_progress.Value = 100;
+                    }
+
+                _EXIT:
+
+                    return written;
+
+                    string getStateText(PackageInformation pi)
+                    {
+                        if (pi?.Enabled ?? false)
+                        {
+                            if (pi.Checked)
+                            {
+                                return MODE_ENABLED;
+                            }
+
+                            return MODE_UNCHECKED;
+                        }
+
+                        if (pi?.Checked ?? false)
+                        {
+                            return MODE_CHECKED;
+                        }
+
+                        return MODE_DISABLED;
                     }
                 }
-                catch
-                {
-                    if (written == 0)
-                    {
-                        written = -1;
-                    }
-                }
-                finally
-                {
-                    sw.Close();
-                }
-
-                if (written == totalCount)
-                {
-                    tspb_progress.Value = 100;
-                }
-
-                return written;
             }
         }
 
@@ -187,6 +308,28 @@ namespace AndroidBloatwareDisabler
             base.OnLoad(e);
 
             _ = UpdateDeviceList();
+        }
+
+        private void MainForm_DragEnter(object sender, DragEventArgs e)
+        {
+            if ((e.Data.GetData(DataFormats.FileDrop) is not string[] items)
+                || items.Any(path => !File.Exists(path))
+                )
+            {
+                return;
+            }
+
+            e.Effect = DragDropEffects.Copy;
+        }
+
+        private void MainForm_DragDrop(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetData(DataFormats.FileDrop) is not string[] items)
+            {
+                return;
+            }
+
+            ApplyPackageList(items);
         }
 
         private void Lv_devices_SelectedIndexChanged(object sender, EventArgs e)
@@ -208,10 +351,6 @@ namespace AndroidBloatwareDisabler
             _ = UpdatePackageList(di.ID);
         }
 
-        private void Tssl_scanDevices_Click(object sender, EventArgs e)
-        {
-            _ = UpdateDeviceList();
-        }
 
         private void Cob_filter_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -237,6 +376,167 @@ namespace AndroidBloatwareDisabler
         private void Tb_filter_Validated(object sender, EventArgs e)
         {
             RefreshPackageList();
+        }
+
+        private void Tb_filter_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                RefreshPackageList();
+                e.Handled = true;
+                lv_packages.Focus();
+            }
+        }
+
+        private void Tssl_scanDevices_Click(object sender, EventArgs e)
+        {
+            _ = UpdateDeviceList();
+        }
+        private void Tssl_exit_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void Tssl_disableEnable_Click(object sender, EventArgs e)
+        {
+            SwitchPackageState();
+        }
+
+        private void ApplyPackageList(string[] filePaths, DumpMode listType = DumpMode.TxtPackageNameOnly)
+        {
+            var isLocked = false;
+            try
+            {
+                Monitor.TryEnter(mLocker, ref isLocked);
+
+                if (!isLocked)
+                {
+                    return;
+                }
+
+                var disablingPackages = new List<PackageInformation>();
+                var enablingPackages = new List<PackageInformation>();
+                var regPackageName = new Regex(@"^[a-z0-9]+(\.[a-z0-9]+)*$");
+
+                foreach (var listPath in filePaths)
+                {
+                    if (!File.Exists(listPath))
+                    {
+                        continue;
+                    }
+
+
+                    using var sr = new StreamReader(listPath);
+                    string line;
+                    var mode = ListReadingMode.None;
+
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        if (string.IsNullOrEmpty(line))
+                        {
+                            continue;
+                        }
+
+                        if (line.StartsWith(HEADER_COMMAND))
+                        {
+                            // command
+                            switch (line.Substring(HEADER_COMMAND.Length).ToLower())
+                            {
+                                case MODE_DISABLED:
+                                case MODE_UNCHECKED:
+                                    mode = ListReadingMode.DisabledPackages;
+                                    break;
+
+                                case MODE_ENABLED:
+                                case MODE_CHECKED:
+                                    mode = ListReadingMode.EnabledPackages;
+                                    break;
+
+                                default:
+                                    break;
+                            }
+                        }
+                        else if (line.StartsWith(HEADER_COMMENT))
+                        {
+                            // comment
+                        }
+                        else if (regPackageName.IsMatch(line))
+                        {
+                            var package = mPackages.Find(p => p.PackageName == line);
+
+                            if (package == null)
+                            {
+                                continue;
+                            }
+
+                            if ((mode == ListReadingMode.DisabledPackages)
+                                && package.Enabled
+                                )
+                            {
+                                if (!disablingPackages.Contains(package))
+                                {
+                                    disablingPackages.Add(package);
+                                }
+
+                                if (enablingPackages.Contains(package))
+                                {
+                                    enablingPackages.Remove(package);
+                                }
+                            }
+                            else if ((mode == ListReadingMode.EnabledPackages)
+                                && (!package.Enabled)
+                                )
+                            {
+                                if (!enablingPackages.Contains(package))
+                                {
+                                    enablingPackages.Add(package);
+                                }
+
+                                if (disablingPackages.Contains(package))
+                                {
+                                    disablingPackages.Remove(package);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                if ((disablingPackages.Count + enablingPackages.Count) < 1)
+                {
+                    MessageBox.Show(Properties.Resources.ThereIsNoPackageThatCanBeChanged, "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                using var plf = new PackageListForm(disabling: disablingPackages, enabling: enablingPackages);
+
+                if (plf.ShowDialog() != DialogResult.OK)
+                {
+                    return;
+                }
+
+                var disablings = plf.DisablingPackages;
+                var enablings = plf.EnablingPackages;
+
+                foreach (var dpkg in disablings)
+                {
+                    dpkg.Checked = false;
+                }
+                foreach (var epkg in enablings)
+                {
+                    epkg.Checked = true;
+                }
+
+                RefreshPackageList();
+
+                tssl_status.Text = string.Format(Properties.Resources.TheCheckStatusOfPackagesHasBeenChanged, disablings.Count() + enablings.Count(), DateTime.Now.ToString("HH:mm:ss.fff"));
+            }
+            finally
+            {
+                if (isLocked)
+                {
+                    Monitor.Exit(mLocker);
+                }
+            }
         }
 
         private async Task UpdateDeviceList()
@@ -492,26 +792,7 @@ namespace AndroidBloatwareDisabler
             }
         }
 
-        private void Tb_filter_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                RefreshPackageList();
-                e.Handled = true;
-                lv_packages.Focus();
-            }
-        }
-
-        private void Tssl_exit_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
         private BackgroundWorker mBw = null;
-        private void Tssl_disableEnable_Click(object sender, EventArgs e)
-        {
-            SwitchPackageState();            
-        }
 
         private void SwitchPackageState()
         {
@@ -604,7 +885,6 @@ namespace AndroidBloatwareDisabler
                 bw.ReportProgress(count * 100 / totalCount, prPair);
             }
 
-        EXIT:
             e.Result = new
             {
                 SelectedDevice = darg.SelectedDevice,
@@ -613,5 +893,7 @@ namespace AndroidBloatwareDisabler
                 FailedPackage = failedCount
             };
         }
+
+
     }
 }

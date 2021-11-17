@@ -117,61 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AllPackages" xml:space="preserve">
-    <value>すべてのパッケージ</value>
+  <data name="btn_cancel.Text" xml:space="preserve">
+    <value>取り消し</value>
   </data>
-  <data name="CheckedPackages" xml:space="preserve">
-    <value>チェック付きパッケージ</value>
+  <data name="btn_ok.Text" xml:space="preserve">
+    <value>適用</value>
   </data>
-  <data name="DevicesFound" xml:space="preserve">
-    <value>{0} 台のデバイスが見つかりました。 {1}</value>
+  <data name="columnHeader1.Text" xml:space="preserve">
+    <value>無効化するパッケージ</value>
   </data>
-  <data name="DisabledPackages" xml:space="preserve">
-    <value>無効パッケージ</value>
+  <data name="columnHeader2.Text" xml:space="preserve">
+    <value>有効化するパッケージ</value>
   </data>
-  <data name="EnabledPackages" xml:space="preserve">
-    <value>有効パッケージ</value>
-  </data>
-  <data name="ListItem_Device" xml:space="preserve">
-    <value>デバイス</value>
-  </data>
-  <data name="ListItem_Model" xml:space="preserve">
-    <value>モデル</value>
-  </data>
-  <data name="ListItem_Name" xml:space="preserve">
-    <value>名称</value>
-  </data>
-  <data name="PackageNameAndState" xml:space="preserve">
-    <value>パッケージ名と状態</value>
-  </data>
-  <data name="PackageNameOnly" xml:space="preserve">
-    <value>パッケージ名のみ</value>
-  </data>
-  <data name="PackagesDumped" xml:space="preserve">
-    <value>{0} 個のパッケージがファイル出力されました。 {1}</value>
-  </data>
-  <data name="PackagesFound" xml:space="preserve">
-    <value>{0} 個のパッケージが見つかりました。 {1}</value>
-  </data>
-  <data name="PackagesSwitched" xml:space="preserve">
-    <value>{0} 個のパッケージの有効／無効が切り替わりました。 {1}</value>
-  </data>
-  <data name="SystemPackages" xml:space="preserve">
-    <value>システムパッケージ</value>
-  </data>
-  <data name="TheCheckStatusOfPackagesHasBeenChanged" xml:space="preserve">
-    <value>{0} 個のパッケージのチェック状態が変更されました。 {1}</value>
-  </data>
-  <data name="ThereIsNoPackageThatCanBeChanged" xml:space="preserve">
-    <value>適用可能なパッケージはありませんでした。</value>
-  </data>
-  <data name="ThereIsNoPackageThatCanBeDumped" xml:space="preserve">
-    <value>ファイル出力できるパッケージはありませんでした。 {0}</value>
-  </data>
-  <data name="ThirdpartyPackages" xml:space="preserve">
-    <value>サードパーティパッケージ</value>
-  </data>
-  <data name="UncheckedPackages" xml:space="preserve">
-    <value>チェックなしパッケージ</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>リストと一致したパッケージ</value>
   </data>
 </root>

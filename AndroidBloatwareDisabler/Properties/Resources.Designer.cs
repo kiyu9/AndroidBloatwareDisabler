@@ -133,6 +133,15 @@ namespace AndroidBloatwareDisabler.Properties {
         }
         
         /// <summary>
+        ///   Package name and state に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string PackageNameAndState {
+            get {
+                return ResourceManager.GetString("PackageNameAndState", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Package name only に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string PackageNameOnly {
@@ -178,11 +187,29 @@ namespace AndroidBloatwareDisabler.Properties {
         }
         
         /// <summary>
-        ///   There is no package that can be dump. {0} に類似しているローカライズされた文字列を検索します。
+        ///   The check status of {0} package(s) has been changed. {1} に類似しているローカライズされた文字列を検索します。
         /// </summary>
-        internal static string ThereIsNoPackageThatCanBeDump {
+        internal static string TheCheckStatusOfPackagesHasBeenChanged {
             get {
-                return ResourceManager.GetString("ThereIsNoPackageThatCanBeDump", resourceCulture);
+                return ResourceManager.GetString("TheCheckStatusOfPackagesHasBeenChanged", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   There is no package that can be applied. に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string ThereIsNoPackageThatCanBeChanged {
+            get {
+                return ResourceManager.GetString("ThereIsNoPackageThatCanBeChanged", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   There is no package that can be dumped. {0} に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string ThereIsNoPackageThatCanBeDumped {
+            get {
+                return ResourceManager.GetString("ThereIsNoPackageThatCanBeDumped", resourceCulture);
             }
         }
         

@@ -141,6 +141,9 @@
   <data name="ListItem_Name" xml:space="preserve">
     <value>Name</value>
   </data>
+  <data name="PackageNameAndState" xml:space="preserve">
+    <value>Package name and state</value>
+  </data>
   <data name="PackageNameOnly" xml:space="preserve">
     <value>Package name only</value>
   </data>
@@ -156,8 +159,14 @@
   <data name="SystemPackages" xml:space="preserve">
     <value>System packages</value>
   </data>
-  <data name="ThereIsNoPackageThatCanBeDump" xml:space="preserve">
-    <value>There is no package that can be dump. {0}</value>
+  <data name="TheCheckStatusOfPackagesHasBeenChanged" xml:space="preserve">
+    <value>The check status of {0} package(s) has been changed. {1}</value>
+  </data>
+  <data name="ThereIsNoPackageThatCanBeChanged" xml:space="preserve">
+    <value>There is no package that can be applied.</value>
+  </data>
+  <data name="ThereIsNoPackageThatCanBeDumped" xml:space="preserve">
+    <value>There is no package that can be dumped. {0}</value>
   </data>
   <data name="ThirdpartyPackages" xml:space="preserve">
     <value>Thirdparty packages</value>
