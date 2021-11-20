@@ -1,0 +1,230 @@
+﻿@disabled
+
+# Mi Doc Viewer
+cn.wps.xiaomi.abroad.lite
+
+# Chrome bookmarks (Carriers)
+com.android.providers.partnerbookmarks
+
+# Catch Log
+com.bsp.catchlog
+
+# Facebook
+com.facebook.appmanager
+com.facebook.katana
+com.facebook.services
+com.facebook.system
+
+# Digital Wellbeing
+com.google.android.apps.wellbeing
+
+# Feedback
+com.google.android.feedback
+
+# Youtube
+com.google.android.youtube
+
+# SmartSecurity by McAfee for SoftBankMobile
+com.mcafee.vsm_android_sbm
+
+# Mi File Manager
+com.mi.android.globalFileexplorer
+
+# Mi Credit
+com.micredit.in
+
+# UniPlay Service
+com.milink.service
+
+# MIUI Analytics
+com.miui.analytics
+
+# Mi Backup
+com.miui.backup
+
+# Bug reporting app
+com.miui.bugreport
+
+# Mi Calculator
+com.miui.calculator
+
+# MiCloud service
+com.miui.cloudservice.sysbase
+
+# Xiaomi Compass
+com.miui.compass
+
+# MIUI Daemon
+com.miui.daemon
+
+# MIUI FM Radio
+com.miui.fm
+
+# MIUI Package installer
+com.miui.global.packageinstaller
+
+# Quick apps
+com.miui.hybrid
+com.miui.hybrid.accessory
+
+# MiCloud sync
+com.miui.micloudsync
+
+# Frequent phrases
+com.miui.phrase
+
+# Mi Music
+com.miui.player
+
+# Quick Ball
+com.miui.touchassistant
+
+# Mi Video
+com.miui.videoplayer
+
+# VSIM core
+com.miui.vsimcore
+
+# Weather By Xiaomi
+com.miui.weather2
+
+# WMService
+com.miui.wmsvc
+
+# Yellow pages
+com.miui.yellowpage
+
+# App Pass
+com.mobiroo.xgen
+
+# Netflix
+com.netflix.mediaclient
+
+# WeChat payment service ?
+com.tencent.soter.soterserver
+
+# Game
+com.xiaomi.glgm
+
+# MiConnect
+com.xiaomi.mi_connect_service
+
+# MiCloud
+com.xiaomi.micloud.sdk
+
+# MiDrop
+com.xiaomi.midrop
+
+# Xiaomi GetApps
+com.xiaomi.mipicks
+
+# MiPlay
+com.xiaomi.miplay_client
+
+# MiPay
+com.xiaomi.payment
+
+# Scanner
+com.xiaomi.scanner
+
+# SIM Activate Service
+com.xiaomi.simactivate.service
+
+# 詐欺ウォール
+jp.co.bbss.android.security.sagiwall_softbank
+
+# リモートサポート
+jp.co.optim.orujff00
+
+# VR SQUARE
+jp.co.softbank.livr
+
+# MySoftbank
+jp.co.softbank.OfficialApp
+
+# Wi-Fiスポット設定
+jp.co.softbank.wispr.froyo
+
+# ebookjapan
+jp.co.yahoo.android.ebookjapan.preinstall
+
+# PayPayフリマ
+jp.co.yahoo.android.paypayfleamarket
+
+# PayPayモール
+jp.co.yahoo.android.pmall
+
+# スポーツナビ
+jp.co.yahoo.android.sports.sportsnavi
+
+# Yahoo!かんたんバックアップ
+jp.co.yahoo.android.ybackup
+
+# Yahoo!JAPAN
+jp.co.yahoo.android.yjtop
+
+# Yahoo!ショッピング
+jp.co.yahoo.android.yshopping
+
+# GYAO!
+jp.co.yahoo.gyao.android.app
+
+# PayPay
+jp.ne.paypay.android.app
+
+# スマホはじめてガイド
+jp.softbank.beginnerguide
+
+# ボイスメッセージ
+jp.softbank.mb.amcn
+
+# バスケットLIVE
+jp.softbank.mb.basketball
+
+# スマートフォン安心遠隔ロック
+jp.softbank.mb.bizlock
+
+# カスタマーサポート
+jp.softbank.mb.customersupportweb
+
+# かんたんデータコピー
+jp.softbank.mb.datamigration
+
+# 災害用伝言板
+jp.softbank.mb.dmb
+
+# 5G LAB
+jp.softbank.mb.fivegservice
+
+# 位置ナビLinkアプリ
+jp.softbank.mb.ichinaviclt
+
+# みまもりマップ
+jp.softbank.mb.mimamorimap
+
+# MySoftBank Web
+jp.softbank.mb.mysoftbankweb
+
+# あんしんフィルター for SoftBank
+jp.softbank.mb.parentalcontrols
+
+# ＋メッセージ
+jp.softbank.mb.plusmessage
+
+# FR SQUARE
+jp.softbank.mb.sbmultiangle
+
+# セキュリティパック
+jp.softbank.mb.securitypack
+
+# とくするアンケート
+jp.softbank.mb.survey
+
+# 通話サービス設定
+jp.softbank.mb.xcap
+
+# 迷惑電話ブロック
+jp.softbank.meiwakudenwablock
+
+# 読み放題プレミアム
+jp.viewn.bookhodai.yomihoudaipremium

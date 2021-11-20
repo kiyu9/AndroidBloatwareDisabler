@@ -55,6 +55,10 @@ namespace AndroidBloatwareDisabler
         private readonly string[] DumpModeFilters = new []
         {
             $"{Properties.Resources.PackageNameOnly} (*.txt)|*.txt",
+            $"{Properties.Resources.PackageNameAndState} (*.txt)|*.txt",
+        };
+        private readonly string[] ApplyModeFilters = new[]
+        {
             $"{Properties.Resources.PackageNameAndState} (*.txt)|*.txt"
         };
 
@@ -123,14 +127,14 @@ namespace AndroidBloatwareDisabler
                 FileName = fileName,
                 Multiselect = true,
                 InitialDirectory = initialDirectory,
-                Filter = string.Join("|", DumpModeFilters)
+                Filter = string.Join("|", ApplyModeFilters)
             };
             if (ofd.ShowDialog() != DialogResult.OK)
             {
                 return;
             }
 
-            ApplyPackageList(ofd.FileNames, (DumpMode)ofd.FilterIndex);            
+            ApplyPackageList(ofd.FileNames);            
         }
         private void Tsmi_DumpClick(object sender, EventArgs e)
         {
@@ -154,7 +158,8 @@ namespace AndroidBloatwareDisabler
             {
                 InitialDirectory = initialDirectory,
                 FileName = fileName,
-                Filter = string.Join("|", DumpModeFilters)
+                Filter = string.Join("|", DumpModeFilters),
+                FilterIndex = (int)DumpMode.TxtPackageNameAndState
             };
             if (sfd.ShowDialog() != DialogResult.OK)
             {
@@ -402,7 +407,7 @@ namespace AndroidBloatwareDisabler
             SwitchPackageState();
         }
 
-        private void ApplyPackageList(string[] filePaths, DumpMode listType = DumpMode.TxtPackageNameOnly)
+        private void ApplyPackageList(string[] filePaths)
         {
             var isLocked = false;
             try
@@ -470,7 +475,7 @@ namespace AndroidBloatwareDisabler
                             }
 
                             if ((mode == ListReadingMode.DisabledPackages)
-                                && package.Enabled
+                                && package.Checked
                                 )
                             {
                                 if (!disablingPackages.Contains(package))
@@ -484,7 +489,7 @@ namespace AndroidBloatwareDisabler
                                 }
                             }
                             else if ((mode == ListReadingMode.EnabledPackages)
-                                && (!package.Enabled)
+                                && (!package.Checked)
                                 )
                             {
                                 if (!enablingPackages.Contains(package))

@@ -212,7 +212,6 @@
             // menuStrip1
             // 
             resources.ApplyResources(this.menuStrip1, "menuStrip1");
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tssl_file,
